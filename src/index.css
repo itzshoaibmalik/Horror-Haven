@@ -1,0 +1,88 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 85% 60%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 80% 12%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 85% 60%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 85% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 8%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 14.9%;
+    --sidebar-ring: 0 85% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-horror-dark text-foreground bg-grain-texture;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .horror-gradient {
+    @apply bg-gradient-to-t from-horror to-horror-dark;
+  }
+  
+  .movie-card {
+    @apply relative overflow-hidden rounded-md border border-horror-light bg-horror transition-all duration-300 hover:border-horror-blood hover:shadow-[0_0_15px_rgba(234,56,76,0.2)];
+  }
+  
+  .blood-text {
+    @apply text-horror-blood font-bold;
+  }
+  
+  .film-grain {
+    @apply after:content-[''] after:absolute after:inset-0 after:bg-grain-texture after:opacity-10 after:pointer-events-none relative;
+  }
+  
+  .horror-button {
+    @apply bg-horror-accent hover:bg-horror-blood text-white font-semibold py-2 px-4 rounded-sm transition-colors duration-300 border border-horror-light;
+  }
+  
+  .horror-nav-item {
+    @apply hover:text-horror-blood transition-colors duration-300;
+  }
+}
